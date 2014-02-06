@@ -4,7 +4,7 @@
 	
 	<body>
  		
-		<p>Vul je favoriete kleur in:</p>
+		<p>Vul je favoriete kleur in, dan krijg je een pop up!:</p>
 		<form class="loggien" action="Array.php" method="POST">
 			<input class="lab" type="text" name="kleur" />
 			<input type="submit" name="submit" />

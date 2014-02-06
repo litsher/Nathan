@@ -1,10 +1,10 @@
 <?php 
 class favo { 
      
-    private $sKleur = ""; 
+    public $sKleur = ""; 
     
-    public function __set( $sAttribuut, $sValue ){
-        switch( $sAttribuut ){
+    public function __set( $sAtt, $sValue ){
+        switch( $sAtt ){
             case 'sKleur':
                 $colors = array('groen', 'rood', 'blauw', 'paars', 'geel', 'wit', 'zwart');				
                 if( !in_array( strtolower( $sValue ), $colors ) ){ 
@@ -18,15 +18,17 @@ class favo {
         return;
     }
     
-    public function __get( $sAttribuut ){
-        if( isset( $this->$sAttribuut ) ){
-            return $this->$sAttribuut;
+    public function __get( $sAtt ){
+        if( isset( $this->$sAtt ) ){
+            return $this->$sAtt;
         }
         return false;
     }
      
 }     
 $oAuto = new favo;
-$oAuto->sKleur = $_POST['kleur'];
+if(isset($_POST['kleur'])) {
+$oAuto->sKleur = $_POST['kleur']; 
 echo "Je favoriete kleur is: " . $oAuto->sKleur; 
+}
 ?>
